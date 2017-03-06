@@ -92,18 +92,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <form name="sentMessage" id="contactForm" novalidate>
+               <FORM action="./login.php" method='POST'>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Username</label>
-                            <input type="text" class="form-control" placeholder="Username" id="username" required data-validation-required-message="Please enter your name.">
+                            <input type="text" name="user" class="form-control" placeholder="Username"  required data-validation-required-message="Please enter your name.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password" id="password" required data-validation-required-message="Please enter your email address.">
+                            <input type="password" name="pass" class="form-control"  placeholder="Password" required data-validation-required-message="Please enter your password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-default">Log In</button>
+                            <INPUT type="submit" value="submit"> <INPUT type="reset">
                         </div>
                     </div>
                 </form>
