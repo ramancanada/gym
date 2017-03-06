@@ -97,43 +97,43 @@
         </div>
     </div>
 
-    <hr>
+        <hr>
  <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <form name="sentMessage" id="contactForm" novalidate>
+               <FORM action="registration.php" method='post'>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Username</label>
-                            <input type="text" class="form-control" placeholder="Username" id="username" required data-validation-required-message="Please enter your name.">
+                            <LABEL name="name">Name </LABEL>
+                            <INPUT type="text" name="name" class="form-control" placeholder="Name" required data-validation-required-message="Please enter your name."><BR>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password" id="password" required data-validation-required-message="Please enter your email address.">
+                            <LABEL name="contactnumber">Contact Number </LABEL>
+                            <INPUT type="text" name="contactnumber" class="form-control" placeholder="Contact Number" required data-validation-required-message="Please enter your Contact Number"><BR>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Full Name</label>
-                            <input type="text" class="form-control" placeholder="Full Name" id="fullname" required data-validation-required-message="Please enter your name.">
+                            <LABEL name="username">Username</LABEL>
+                            <INPUT type="text" name="user" class="form-control" placeholder="Username" required data-validation-required-message="Please enter your Username."><BR>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Contact Number</label>
-                            <input type="tel" class="form-control" placeholder="Contact Number" id="cntnum" required data-validation-required-message="Please enter your name.">
+                            <LABEL name="email">Email </LABEL>
+                            <INPUT type="text" name="email" class="form-control" placeholder="Email" required data-validation-required-message="Please enter your Email."><BR>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>E-mail</label>
-                            <input type="email" class="form-control" placeholder="E-mail" id="email" required data-validation-required-message="Please enter your name.">
+                             <LABEL name="password">Password</LABEL>
+                             <INPUT type="text" name="pass" class="form-control" placeholder="Password" required data-validation-required-message="Please enter your password."><BR>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                             <button type="submit" class="btn btn-default">Sign Up</button>
                         </div>
                     </div>
-                </form>
+                </FORM>
             </div>
         </div>
     </div>
