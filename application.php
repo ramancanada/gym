@@ -74,7 +74,7 @@
 </head>
 
 <body>
-
+    
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -129,6 +129,8 @@
         </div>
     </div>
     <hr>
+
+    <form id="form" action="application_process.php" method="POST">
 
     <section class="no-padding" id="group_training">
         <div class="container-fluid">
@@ -188,7 +190,7 @@
             ?>             
                 </tbody>
             </table>
-            <a href="#" class="btn btn-success" role="button">Apply</a>
+            <a href="javascript:document.getElementById('form').submit()" class="btn btn-success" role="button">Apply</a>
         </div>        
     </section>
 
@@ -252,7 +254,7 @@
             ?>            
                 </tbody>
             </table>
-            <a href="#" class="btn btn-success" role="button">Apply</a>
+            <a href="javascript:document.getElementById('form').submit()" class="btn btn-success" role="button">Apply</a>
         </div>        
     </section>
 
@@ -316,7 +318,7 @@
             ?>            
                 </tbody>
             </table>
-            <a href="#" class="btn btn-success" role="button">Apply</a>
+            <a href="javascript:document.getElementById('form').submit()" class="btn btn-success" role="button">Apply</a>
         </div>        
     </section>
 
@@ -380,239 +382,15 @@
             ?>
                 </tbody>
             </table>
-            <a href="#" class="btn btn-success" role="button">Apply</a>
+            <a href="javascript:document.getElementById('form').submit()" class="btn btn-success" role="button">Apply</a>
         </div>        
     </section>
 
-    <hr>
-
-    <!--
-    <section class="no-padding" id="group_training">
-        <div class="container-fluid">
-            <h3>Group Training</h3>
-            <p>This is a group training classes.</p>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Training Name</th>
-                    <th>Training Days</th>
-                    <th>Time</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass"></div></td>
-                    <td>Belly Dancing</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>18:00 ~ 20:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass"></div></td>
-                    <td>Body Blast</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>18:00 ~ 20:00</td>
-                </tr>      
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass"></div></td>
-                    <td>Group Cycling</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>20:00 ~ 22:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass"></div></td>
-                    <td>Hip Hop B-Boying</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>20:00 ~ 22:00</td>
-                </tr>      
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass"></div></td>
-                    <td>Physioball</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>22:00 ~ 23:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass"></div></td>
-                    <td>Sculpting with Weights</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>22:00 ~ 23:00</td>
-                </tr>                
-                </tbody>
-            </table>
-            <a href="#" class="btn btn-success" role="button">Apply</a>
-        </div>        
-    </section>
+    </form>
 
     <hr>
 
-    <section class="no-padding" id="personal_training">
-        <div class="container-fluid">
-            <h3>Personal Training</h3>
-            <p>This is a personal training schedule.</p>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Training Name</th>
-                    <th>Training Days</th>
-                    <th>Time</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="ptclass"></div></td>
-                    <td>Training #1</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>18:00 ~ 20:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="ptclass"></div></td>
-                    <td>Training #2</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>18:00 ~ 20:00</td>
-                </tr>      
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="ptclass"></div></td>
-                    <td>Training #3</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>20:00 ~ 22:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="ptclass"></div></td>
-                    <td>Training #4</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>20:00 ~ 22:00</td>
-                </tr>      
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="ptclass"></div></td>
-                    <td>Training #5</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>22:00 ~ 23:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="ptclass"></div></td>
-                    <td>Training #6</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>22:00 ~ 23:00</td>
-                </tr>                
-                </tbody>
-            </table>
-            <a href="#" class="btn btn-success" role="button">Apply</a>
-        </div>        
-    </section>
-
-    <hr>
-
-    <section class="no-padding" id="yoga">
-        <div class="container-fluid">
-            <h3>Yoga</h3>
-            <p>This is a Yoga schedule.</p>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Training Name</th>
-                    <th>Training Days</th>
-                    <th>Time</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="yoga"></div></td>
-                    <td>Yoga #1</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>18:00 ~ 20:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="yoga"></div></td>
-                    <td>Yoga #2</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>18:00 ~ 20:00</td>
-                </tr>      
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="yoga"></div></td>
-                    <td>Yoga #3</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>20:00 ~ 22:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="yoga"></div></td>
-                    <td>Yoga #4</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>20:00 ~ 22:00</td>
-                </tr>      
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="yoga"></div></td>
-                    <td>Yoga #5</td>
-                    <td><span class="label label-primary">Mon</span><span class="label label-info">Wed</span><span class="label label-danger">Fri</span></td>
-                    <td>22:00 ~ 23:00</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="yoga"></div></td>
-                    <td>Yoga #6</td>
-                    <td><span class="label label-success">Tue</span><span class="label label-warning">Thu</span></td>
-                    <td>22:00 ~ 23:00</td>
-                </tr>                
-                </tbody>
-            </table>
-            <a href="#" class="btn btn-success" role="button">Apply</a>
-        </div>        
-    </section>
-
-    <hr>
-
-    <section class="no-padding" id="aerobics">
-        <div class="container-fluid">
-            <h3>Aerobics</h3>
-            <p>This is a Aerobics schedule.</p>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Training Name</th>
-                    <th>Training Days</th>
-                    <th>Time</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="aerobics"></div></td>
-                    <td>Yoga #1</td>
-                    <td><span class="label label-primary">Mon</span>
-                        <span class="label label-success">Tue</span>
-                        <span class="label label-info">Wed</span>
-                        <span class="label label-warning">Thu</span>
-                        <span class="label label-danger">Fri</span></td>
-                    <td>08:00 ~ 09:30</td>
-                </tr>      
-                <tr class="">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="aerobics"></div></td>
-                    <td>Yoga #1</td>
-                    <td><span class="label label-primary">Mon</span>
-                        <span class="label label-success">Tue</span>
-                        <span class="label label-info">Wed</span>
-                        <span class="label label-warning">Thu</span>
-                        <span class="label label-danger">Fri</span></td>
-                    <td>10:00 ~ 11:30</td>
-                </tr>      
-                <tr class="active">
-                    <td align="center"><div class="checkbox"><input type="checkbox" name="aerobics"></div></td>
-                    <td>Yoga #1</td>
-                    <td><span class="label label-primary">Mon</span>
-                        <span class="label label-success">Tue</span>
-                        <span class="label label-info">Wed</span>
-                        <span class="label label-warning">Thu</span>
-                        <span class="label label-danger">Fri</span></td>
-                    <td>14:00 ~ 15:30</td>
-                </tr>    
-                </tbody>
-            </table>
-            <a href="#" class="btn btn-success" role="button">Apply</a>
-        </div>        
-    </section>
-
-    <hr>
-    -->
+   
     <!-- Footer -->
     <footer>
         <div class="container">
