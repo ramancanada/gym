@@ -1,3 +1,45 @@
+<?php
+    session_start();
+
+    $servername = "localhost";
+    $username   = "root";
+    $password   = "";
+    $dbname     = "Gym";
+
+    $group    = array();
+    $personal = array();
+    $yoga     = array();
+    $aerobics = array();
+
+    try {
+        $link = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        
+        // set the PDO error mode to exception
+        $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $link->prepare("SELECT program_id, category_id, program_name, program_days, program_begin_time, program_end_time FROM program WHERE is_opened='Y'");
+        $stmt->execute();
+
+        while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+            if ($result->category_id == '0001') {        // group training
+                array_push($group, $result);
+            } else if ($result->category_id == '0002') { // personal training
+                array_push($personal, $result);
+            } else if ($result->category_id == '0003') { // yoga
+                array_push($yoga, $result);
+            } else if ($result->category_id == '0004') { // aerobics
+                array_push($aerobics, $result);
+            }
+        }
+        
+        $link = null;
+
+    } catch(PDOException $e) {
+        echo "<script type='text/javascript'>alert('Error: " . $e->getMessage() . "');</script>";
+        echo $e->getMessage();
+        //header("Location:503.html");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,6 +130,263 @@
     </div>
     <hr>
 
+    <section class="no-padding" id="group_training">
+        <div class="container-fluid">
+            <h3>Group Training</h3>
+            <p>This is a group training classes.</p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Training Name</th>
+                    <th>Training Days</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody>
+            <?php
+                // Group Training Program List
+                foreach ($group as $program) {
+            ?>
+                <tr class="active">
+                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass" value="<?php echo $program->program_id ?>"></div></td>
+                    <td><?php echo $program->program_name ?></td>
+                    <td>
+                    <?php
+                        $days = explode(",", $program->program_days);
+                        foreach ($days as $day) {
+                            switch ($day) {
+                                case "1":
+                                    echo "<span class='label label-primary'>Mon</span>";
+                                    break;
+                                case "2":
+                                    echo "<span class='label label-success'>Tue</span>";
+                                    break;
+                                case "3":
+                                    echo "<span class='label label-info'>Wed</span>";
+                                    break;
+                                case "4":
+                                    echo "<span class='label label-warning'>Thu</span>";
+                                    break;
+                                case "5":
+                                    echo "<span class='label label-danger'>Fri</span>";
+                                    break;
+                                case "6":
+                                    echo "<span class='label label-default'>Sat</span>";
+                                    break;
+                                case "7":
+                                    echo "<span class='label label-default'>Sun</span>";
+                                    break;
+                            }
+                        }                      
+                    ?>
+                    </td>
+                    <td><?php echo $program->program_begin_time ?> ~ <?php echo $program->program_end_time ?></td>
+                </tr>
+            <?php
+                }
+            ?>             
+                </tbody>
+            </table>
+            <a href="#" class="btn btn-success" role="button">Apply</a>
+        </div>        
+    </section>
+
+    <hr>
+
+    <section class="no-padding" id="personal_training">
+        <div class="container-fluid">
+            <h3>Personal Training</h3>
+            <p>This is a personal training schedule.</p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Training Name</th>
+                    <th>Training Days</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody>
+            <?php
+                // Personal Training Program List
+                foreach ($personal as $program) {
+            ?>
+                <tr class="active">
+                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass" value="<?php echo $program->program_id ?>"></div></td>
+                    <td><?php echo $program->program_name ?></td>
+                    <td>
+                    <?php
+                        $days = explode(",", $program->program_days);
+                        foreach ($days as $day) {
+                            switch ($day) {
+                                case "1":
+                                    echo "<span class='label label-primary'>Mon</span>";
+                                    break;
+                                case "2":
+                                    echo "<span class='label label-success'>Tue</span>";
+                                    break;
+                                case "3":
+                                    echo "<span class='label label-info'>Wed</span>";
+                                    break;
+                                case "4":
+                                    echo "<span class='label label-warning'>Thu</span>";
+                                    break;
+                                case "5":
+                                    echo "<span class='label label-danger'>Fri</span>";
+                                    break;
+                                case "6":
+                                    echo "<span class='label label-default'>Sat</span>";
+                                    break;
+                                case "7":
+                                    echo "<span class='label label-default'>Sun</span>";
+                                    break;
+                            }
+                        }                      
+                    ?>
+                    </td>
+                    <td><?php echo $program->program_begin_time ?> ~ <?php echo $program->program_end_time ?></td>
+                </tr>
+            <?php
+                }
+            ?>            
+                </tbody>
+            </table>
+            <a href="#" class="btn btn-success" role="button">Apply</a>
+        </div>        
+    </section>
+
+    <hr>
+
+    <section class="no-padding" id="yoga">
+        <div class="container-fluid">
+            <h3>Yoga</h3>
+            <p>This is a Yoga schedule.</p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Training Name</th>
+                    <th>Training Days</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody>
+            <?php
+                // Yoga Training Program List
+                foreach ($yoga as $program) {
+            ?>
+                <tr class="active">
+                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass" value="<?php echo $program->program_id ?>"></div></td>
+                    <td><?php echo $program->program_name ?></td>
+                    <td>
+                    <?php
+                        $days = explode(",", $program->program_days);
+                        foreach ($days as $day) {
+                            switch ($day) {
+                                case "1":
+                                    echo "<span class='label label-primary'>Mon</span>";
+                                    break;
+                                case "2":
+                                    echo "<span class='label label-success'>Tue</span>";
+                                    break;
+                                case "3":
+                                    echo "<span class='label label-info'>Wed</span>";
+                                    break;
+                                case "4":
+                                    echo "<span class='label label-warning'>Thu</span>";
+                                    break;
+                                case "5":
+                                    echo "<span class='label label-danger'>Fri</span>";
+                                    break;
+                                case "6":
+                                    echo "<span class='label label-default'>Sat</span>";
+                                    break;
+                                case "7":
+                                    echo "<span class='label label-default'>Sun</span>";
+                                    break;
+                            }
+                        }                      
+                    ?>
+                    </td>
+                    <td><?php echo $program->program_begin_time ?> ~ <?php echo $program->program_end_time ?></td>
+                </tr>
+            <?php
+                }
+            ?>            
+                </tbody>
+            </table>
+            <a href="#" class="btn btn-success" role="button">Apply</a>
+        </div>        
+    </section>
+
+    <hr>
+
+    <section class="no-padding" id="aerobics">
+        <div class="container-fluid">
+            <h3>Aerobics</h3>
+            <p>This is a Aerobics schedule.</p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Training Name</th>
+                    <th>Training Days</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody>
+            <?php
+                // Aerobics Training Program List
+                foreach ($aerobics as $program) {
+            ?>
+                <tr class="active">
+                    <td align="center"><div class="checkbox"><input type="checkbox" name="gtclass" value="<?php echo $program->program_id ?>"></div></td>
+                    <td><?php echo $program->program_name ?></td>
+                    <td>
+                    <?php
+                        $days = explode(",", $program->program_days);
+                        foreach ($days as $day) {
+                            switch ($day) {
+                                case "1":
+                                    echo "<span class='label label-primary'>Mon</span>";
+                                    break;
+                                case "2":
+                                    echo "<span class='label label-success'>Tue</span>";
+                                    break;
+                                case "3":
+                                    echo "<span class='label label-info'>Wed</span>";
+                                    break;
+                                case "4":
+                                    echo "<span class='label label-warning'>Thu</span>";
+                                    break;
+                                case "5":
+                                    echo "<span class='label label-danger'>Fri</span>";
+                                    break;
+                                case "6":
+                                    echo "<span class='label label-default'>Sat</span>";
+                                    break;
+                                case "7":
+                                    echo "<span class='label label-default'>Sun</span>";
+                                    break;
+                            }
+                        }                      
+                    ?>
+                    </td>
+                    <td><?php echo $program->program_begin_time ?> ~ <?php echo $program->program_end_time ?></td>
+                </tr>
+            <?php
+                }
+            ?>
+                </tbody>
+            </table>
+            <a href="#" class="btn btn-success" role="button">Apply</a>
+        </div>        
+    </section>
+
+    <hr>
+
+    <!--
     <section class="no-padding" id="group_training">
         <div class="container-fluid">
             <h3>Group Training</h3>
@@ -313,7 +612,7 @@
     </section>
 
     <hr>
-
+    -->
     <!-- Footer -->
     <footer>
         <div class="container">
