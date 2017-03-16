@@ -4,13 +4,12 @@
     $servername = "localhost";
     $username   = "root";
     $password   = "";
-    $dbname     = "data";
+    $dbname     = "Gym";
 
     $myusername = NULL;
     $mypassword = NULL;
 
     if ($_SERVER['REQUEST_METHOD']=='POST'){
-        echo "<script type='text/javascript'>alert('What the fuck.');</script>";
         $myusername = ($_POST['user']);
         $mypassword = ($_POST['pass']);
         
@@ -25,38 +24,38 @@
         // set the PDO error mode to exception
         $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $link->prepare("SELECT user, pass, name FROM data.abc WHERE user=:myusername");
+        $stmt = $link->prepare("SELECT username, password, name FROM Users WHERE username=:myusername");
         
         $stmt->bindParam(':myusername', $myusername);
         $stmt->execute();
 
         $name = "";
         $isMatch = false;
-        while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
-            if ($result->pass == $password) {
-                $name = $result->name;
-                $isMatch = true;
-            }
-        }
+        $result = $stmt->fetch(PDO::FETCH_OBJ);
+
+        if ($result->password == $mypassword) {
+            $name = $result->name;
+            $isMatch = true;
+        }        
 
         if ($isMatch) {
             $_SESSION['username'] = $myusername;
             $_SESSION['name']     = $name;
 
             echo "<script type='text/javascript'>alert('Welcome, $name');</script>";
-            echo "<script type='text/javascript'>window.location.replace('index.html');</script>"
+            echo "<script type='text/javascript'>window.location.replace('index.html');</script>";
 
         } else {
             echo "<script type='text/javascript'>alert('Sorry, please check your username and password.');</script>";
-            echo "<script type='text/javascript'>window.location.replace('login.html');</script>"
+            echo "<script type='text/javascript'>window.location.replace('login.html');</script>";
         }
-        
-        $link.close();
+
+        //$link.close();
         $link = null;
 
     } catch(PDOException $e) {
-        // echo "<script type='text/javascript'>alert('Error: " . $e->getMessage() . "');</script>";
-        header("Location:503.html");
+         echo $e->getMessage();
+        // header("Location:503.html");
     }
 
 /*

@@ -1,5 +1,17 @@
 CREATE SCHEMA `Gym` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
 
+CREATE  TABLE `gym`.`Users` (
+  `username` VARCHAR(50) NOT NULL ,
+  `name` VARCHAR(45) NOT NULL ,
+  `password` VARCHAR(45) NOT NULL ,
+  `email` VARCHAR(100) NULL ,
+  `tel` VARCHAR(15) NULL ,
+  PRIMARY KEY (`username`) )
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+INSERT INTO `gym`.`Users` (`username`, `name`, `password`, `email`, `tel`) VALUES ('test1', 'tester1', 'test1', 'test1@abc.com', '(647)123-4567');
+INSERT INTO `gym`.`Users` (`username`, `name`, `password`, `email`, `tel`) VALUES ('test2', 'tester2', 'test2', 'test2@efg.com', '(864)456-7890');
 
 
 CREATE  TABLE `Gym`.`program` (
