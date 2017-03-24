@@ -1,12 +1,15 @@
-<html>  
-    <head>
-         <meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Planet Fitness - Application</title>
+    <title>Planet Fitness - File Not Found</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,10 +28,17 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+    body { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMC8yOS8xMiKqq3kAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABHklEQVRIib2Vyw6EIAxFW5idr///Qx9sfG3pLEyJ3tAwi5EmBqRo7vHawiEEERHS6x7MTMxMVv6+z3tPMUYSkfTM/R0fEaG2bbMv+Gc4nZzn+dN4HAcREa3r+hi3bcuu68jLskhVIlW073tWaYlQ9+F9IpqmSfq+fwskhdO/AwmUTJXrOuaRQNeRkOd5lq7rXmS5InmERKoER/QMvUAPlZDHcZRhGN4CSeGY+aHMqgcks5RrHv/eeh455x5KrMq2yHQdibDO6ncG/KZWL7M8xDyS1/MIO0NJqdULLS81X6/X6aR0nqBSJcPeZnlZrzN477NKURn2Nus8sjzmEII0TfMiyxUuxphVWjpJkbx0btUnshRihVv70Bv8ItXq6Asoi/ZiCbU6YgAAAABJRU5ErkJggg==);}
+    .error-template {padding: 40px 15px;text-align: center;}
+    .error-actions {margin-top:15px;margin-bottom:15px;}
+    .error-actions .btn { margin-right:10px; }
+    </style>
 
 </head>
 
-<body>  
+<body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -51,16 +61,13 @@
                         <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a href="service.html">Service</a>
-                    </li>
-                    <li>
                         <a href="contact.html">Contact</a>
                     </li>
                     <li>
-                        <a>Logged In</a>
+                        <a href="login.html">Log In</a>
                     </li>
                     <li>
-                        <a href="logout.php">LOG OUT</a>
+                        <a href="signup.html">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -69,61 +76,69 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <div class="no-padding" style="background-image: url('img/fitness-3.jpg');">
+    
+
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading" style="margin-top: 50px; height: 100px;">
-                        <h1><font color="white">Application</font></h1>                        
-                    </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">                    
+                    <p class="copyright text-muted">Below Data is For Yoga </p>
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-   <form action="aerobics_process.php" method="post" enctype="multipart/form-data">  
-   <div style="width:200px;border-radius:6px;margin:0px auto"> 
-        
- <div class="container-fluid">
-            <h3>Group Training</h3>
-            <p>This is a group training classes.</p>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Training Name</th>
-                    <th>Training Days</th>
-                    <th>Time</th>
-                </tr>
-                </thead> 
-   <tr>  
-      <td>Aerobics #1</td> 
-      <td>Monday to Friday</td>
-      <td>18:00 - 20:00</td>     
-      <td><input type="checkbox" name="techno[]" value="Yoga #1 on Monday to Friday From 8:00 to 9:30"></td>  
-   </tr>  
-   <tr>  
-      <td>Aerobics #2</td> 
-      <td>Monday to Friday</td>
-      <td>18:00 - 20:00</td>  
-      <td><input type="checkbox" name="techno[]" value="Yoga #1 on Monday to Friday From 10:00 to 11:30"></td>  
-   </tr>  
-   <tr>  
-      <td>Aerobics</td> 
-      <td>Monday to Friday</td>
-      <td>20:00 - 22:00</td> 
-      <td><input type="checkbox" name="techno[]" value="Yoga #1 on Monday to Friday From 14:00 to 15:30"></td>  
-   </tr>  
-  
-    
-   <tr>  
-      <td colspan="2" align="center"><input type="submit" value="Apply"  name="sub"></td>  
-   </tr>  
-</table>  
-</div>  
-</form>  
+    </footer>
 
-</body>  
-</html>  
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+
+
+<?php
+$host="localhost";//host name  
+$username="root"; //database username  
+$word="";//database word  
+$db_name="try";//database name  
+$con=mysqli_connect("$host", "$username", "$word","$db_name") or die("cannot connect");//connection string  
+	// SQL query
+	$result = mysqli_query($con,"SELECT * FROM YOGA");
+
+echo "<table border='1'>";
+
+$i = 0;
+while($row = $result->fetch_assoc())
+{
+    if ($i == 0) {
+      $i++;
+      echo "<tr>";
+      foreach ($row as $key => $value) {
+        echo "<th>" . $key . "</th>";
+      }
+      echo "</tr>";
+    }
+    echo "<tr>";
+    foreach ($row as $value) {
+      echo "<td>" . $value . "</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+
+
+
+
+mysqli_close($con);
+?>
+	
+	</body>
+	</html>

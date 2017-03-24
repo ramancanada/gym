@@ -33,7 +33,7 @@
         $isMatch = false;
         $result = $stmt->fetch(PDO::FETCH_OBJ);
 
-        if ($result->password == $mypassword) {
+        if ($result->password == md5($mypassword)) {
             $name = $result->name;
             $isMatch = true;
         }        
@@ -43,7 +43,7 @@
             $_SESSION['name']     = $name;
 
             echo "<script type='text/javascript'>alert('Welcome, $name');</script>";
-            echo "<script type='text/javascript'>window.location.replace('index.html');</script>";
+            echo "<script type='text/javascript'>window.location.replace('index2.html');</script>";
 
         } else {
             echo "<script type='text/javascript'>alert('Sorry, please check your username and password.');</script>";
@@ -58,34 +58,4 @@
         // header("Location:503.html");
     }
 
-/*
-
-$link = new mysqli($servername, $username, $password, $dbname);
-/////check connection 
-if ($link->connect_error) {
-     echo "Connection Failed";
-    die("Connection Failed: ". $link->connect_error);
-
-}
-$myusername = NULL;
-$mypassword = NULL;
-
-if (isset($_POST['submit'])){
-    $myusername =  ($_POST['user']);
-    $mypassword = ($_POST['pass']);
-}
-$result1 = mysql_query("SELECT user, pass FROM data.abc WHERE user='$myusername' ");
-
-if($result1 === FALSE) { 
-    echo "Login Failed";
-    die(mysql_error()); // TODO: better error handling
-}
-
-while($row = mysql_fetch_array($result))
-{
-    echo "you are logged in";
-}
-
-$link->close();
-*/
 ?>
