@@ -5,7 +5,7 @@ if(isset($_POST['sub']))
 $host="localhost";//host name  
 $username="root"; //database username  
 $word="";//database word  
-$db_name="try";//database name  
+$db_name="gym";//database name  
 $tbl_name="personaltraining"; //table name  
 $con=mysqli_connect("$host", "$username", "$word","$db_name") or die("cannot connect");//connection string  
 $checkbox1=$_POST['techno'];  

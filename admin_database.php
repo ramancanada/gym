@@ -9,7 +9,7 @@
 $host="localhost";//host name  
 $username="root"; //database username  
 $word="";//database word  
-$db_name="try";//database name  
+$db_name="gym";//database name  
 $con=mysqli_connect("$host", "$username", "$word","$db_name") or die("cannot connect");//connection string  
 	// SQL query
 	$result = mysqli_query($con,"SELECT * FROM YOGA");
