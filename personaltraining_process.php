@@ -1,5 +1,5 @@
 <?php  
-
+$userg =$_POST['UsernameG'];
 if(isset($_POST['sub']))  
 {  
 $host="localhost";//host name  
@@ -14,7 +14,7 @@ foreach($checkbox1 as $chk1)
    {  
       $chk .= $chk1.",";  
    }  
-$in_ch=mysqli_query($con,"INSERT into personaltraining(data) values ('$chk')");  
+$in_ch=mysqli_query($con,"INSERT into personaltraining(data,userg) values ('$chk','$userg')");  
 if($in_ch==1)  
    {  
       echo'<script>alert("You have Succesfully Applied for these Activities.You can apply for Other activites too.")</script>'; 
