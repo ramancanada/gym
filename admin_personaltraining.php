@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Planet Fitness </title>
+    <title>Planet Fitness - File Not Found</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -57,18 +57,7 @@
                     <li>
                         <a href="index.html">Home</a>
                     </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <a href="login.html">Log In</a>
-                    </li>
-                    <li>
-                        <a href="signup.html">Sign Up</a>
-                    </li>
+                  
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -83,7 +72,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">                    
-                    <p class="copyright text-muted">Below Data is For Yoga </p>
+                    <p class="copyright text-muted">Below Data is For Personal Training</p>
                 </div>
             </div>
         </div>
@@ -111,7 +100,7 @@ $word="";//database word
 $db_name="gym";//database name  
 $con=mysqli_connect("$host", "$username", "$word","$db_name") or die("cannot connect");//connection string  
 	// SQL query
-	$result = mysqli_query($con,"SELECT * FROM YOGA");
+	$result = mysqli_query($con,"SELECT * FROM personaltraining");
 
 echo "<table border='1'>";
 
@@ -133,9 +122,6 @@ while($row = $result->fetch_assoc())
     echo "</tr>";
 }
 echo "</table>";
-
-
-
 
 mysqli_close($con);
 ?>
